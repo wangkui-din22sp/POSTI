@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useEffect} from "react";
+import {useParams,Link} from "react-router-dom";
 import styles from "./ParcelsView.module.css";
 import { getAllParcels } from "../parcels";
 import Parcel from "./Parcel";
@@ -6,15 +7,26 @@ import Parcel from "./Parcel";
 
 const ParcelsView = () => {
   const parcels = getAllParcels();
-
-/*   useEffect(() => {
+/* when the backend codings are ready, it will be modified to  
+  useEffect(() => {
     fetch("localhost:3000/parcels")
       .then((response) => response.json())
       .then((data) => setUsers(data.users));
   }, []); */
+
+  const driverUserName = useParams().driverUserName;
+  useEffect(() => {console.log(driverUserName)});
      
   return (
     <div>
+      <h1>Posti</h1>
+      <nav>
+      {/* <img src={imagePath} alt="Placeholder" /> */}
+        <Link to="/sent">Send  </Link>
+        <Link to="/history">History  </Link>
+        <Link to="/track">Track  </Link>
+        <Link to="/settings">Settings  </Link>
+      </nav>
 
       <div className={styles.parcelsTable}>
       <table className={styles.th}>      
@@ -23,7 +35,8 @@ const ParcelsView = () => {
         {parcels.map((parcel) => (
           
           <Parcel
-            id={parcel.id}
+            driverUserName={driverUserName}
+            parcelID={parcel.id}
             date={parcel.date}
             name={parcel.name}
             status={parcel.status}

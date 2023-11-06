@@ -4,11 +4,11 @@ import {useParams,Link} from "react-router-dom";
 
 const ParcelDetailsView = () => {
 
-  
-  const id = useParams().id;
-  useEffect(() => {console.log(id)});
+  const driverUserName = useParams().driverUserName;
+  const parcelID = useParams().parcelID;
+  useEffect(() => {console.log(parcelID)});
 
-  const parcel = getParcelById(id);
+  const parcel = getParcelById(parcelID);
 
   return (
     <div>
@@ -35,7 +35,8 @@ const ParcelDetailsView = () => {
       <li>Date: {parcel.date}</li>
       <li>Status: </li>
       <li>One-time code: </li>
-      <Link to="/">Back to parcels</Link>
+      <Link to={`/${driverUserName}/ParcelsView`}> Back to parcels overview</Link>
+      
       </ul>    
       </tr>
       </tbody>

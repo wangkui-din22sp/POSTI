@@ -28,7 +28,7 @@ export default function Login() {
     });
 
     if (isAuthenticated) {
-      navigate('/ParcelsView');
+      navigate(`/${username}/ParcelsView`);
     } else {
       alert('Invalid username or password. Please try again.');
     }
