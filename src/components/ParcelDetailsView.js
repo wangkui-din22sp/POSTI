@@ -37,6 +37,7 @@ const ParcelDetailsView = () => {
       <li>One-time code: </li>
       <Link to={`/${driverUserName}/ParcelsView`}> Back to parcels overview</Link>
       
+      
       </ul>    
       </tr>
       </tbody>

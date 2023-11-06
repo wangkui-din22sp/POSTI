@@ -24,9 +24,10 @@ const ParcelsView = () => {
       {/* <img src={imagePath} alt="Placeholder" /> */}
         <Link to="/sent">Send  </Link>
         <Link to="/history">History  </Link>
-        <Link to="/track">Track  </Link>
-        <Link to="/settings">Settings  </Link>
+        <Link to="/track">Track  </Link> <br/>
+        <Link to={`/${driverUserName}/Settings`}> Settings  </Link> 
       </nav>
+      
 
       <div className={styles.parcelsTable}>
       <table className={styles.th}>      
