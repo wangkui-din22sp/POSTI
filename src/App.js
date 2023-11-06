@@ -26,7 +26,9 @@ const App = () => {
 
       <Routes>
           <Route path="/" element={<ParcelsView />} />
+          <Route path="/login" component={<Login/>} />
           <Route path="parcels/:id"  element={<ParcelDetailsView />} />
+
           
        
       </Routes>
