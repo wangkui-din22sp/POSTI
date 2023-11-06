@@ -1,4 +1,7 @@
 import React from "react";
+import Login from "./components/Login";
+import CreateAccount from "./components/CreateAccount";
+import RestorePassword from "./components/RestorePassword";
 import ParcelsView from "./components/ParcelsView";
 import ParcelDetailsView from "./components/ParcelDetailsView";
 
@@ -25,9 +28,11 @@ const App = () => {
       
 
       <Routes>
-          <Route path="/" element={<ParcelsView />} />
-          <Route path="/login" component={<Login/>} />
-          <Route path="parcels/:id"  element={<ParcelDetailsView />} />
+          <Route path="/ParcelsView" element={<ParcelsView />} />
+          <Route path="/Login" element={<Login />} />
+          <Route path="/CreateAccount" element={<CreateAccount />} />
+          <Route path="/RestorePassword" element={<RestorePassword />} />
+          <Route path="Parcels/:id"  element={<ParcelDetailsView />} />
 
           
        

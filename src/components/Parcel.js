@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 export default function Parcel({ id, date, name, status }) {
   return (
-    <tr className={styles.th} data-testid={`parcel-${id}`}>
+    <tr className={styles} data-testid={`parcel-${id}`}>
       
       
       

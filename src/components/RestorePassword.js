@@ -16,21 +16,22 @@ export default function Login() {
 
 
 
-  const loginHandler = (e) => {
+  const getPassword = (e) => {
     e.preventDefault();
     printCredentials();
-    let isAuthenticated = false;
+    let isUserFound = false; 
+    let password ='';
 
     credentials.forEach((credential) => {
-      if (username === credential.userName && password === credential.password) {
-        isAuthenticated = true;
+      if (username === credential.userName ) {
+        isUserFound = true; password = credential.password;
       }
     });
 
-    if (isAuthenticated) {
-      navigate('/ParcelsView');
+    if (isUserFound) {
+      alert('Username: '+username+' Password: '+password);
     } else {
-      alert('Invalid username or password. Please try again.');
+      alert('No such an user was found. Please try again.');
     }
   };
 
@@ -39,7 +40,8 @@ export default function Login() {
 
   return (
     <div className={styles}>
-    <form onSubmit={loginHandler}>
+    <h1>Restore Password</h1>
+    <form onSubmit={getPassword}>
       <label>
         Username:
         <input
@@ -50,21 +52,8 @@ export default function Login() {
         />
       </label>
       <br />
-      <label>
-        Password: 
-        <input
-          value={password}
-          onChange={event => setPassword(event.target.value)}
-          name="password"
-          type="password"
-        />
-      </label>
-      <br />
-      <button>Submit</button> <br />
-      <Link to={`/RestorePassword`}> Restore Password</Link> <br />
-      <Link to={`/CreateAccount`}> Create Account</Link>
+      <button>Restore</button> <br />
     </form>
     </div>
   );
 }
-
